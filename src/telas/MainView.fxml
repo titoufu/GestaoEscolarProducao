@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telas.MainViewController">
+   <content>
+      <BorderPane fx:id="idBorderPane">
+         <center>
+            <ImageView fx:id="idImage" fitHeight="540.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../Imagens/Malob.jpeg" />
+               </image>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </ImageView>
+         </center>
+         <top>
+            <MenuBar fx:id="myMenuBar" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Alunos">
+                  <items>
+                    <MenuItem fx:id="idCadastrarAluno" mnemonicParsing="false" onAction="#onMenuCadastrarAluno" text="Novo Cadastro" />
+                        <MenuItem fx:id="idAtualizarAluno" mnemonicParsing="false" onAction="#onMenuAtualizarAluno" text="Atualizar Cadastro" />
+                        <MenuItem fx:id="idRemoverAluno" mnemonicParsing="false" onAction="#omMenuRemoverAluno" text="Remover " />
+                        <MenuItem fx:id="idMatricularAluno" mnemonicParsing="false" onAction="#onMenuMatricularAluno" text="Matricular " />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Relatórios">
+                  <items>
+                    <MenuItem fx:id="idRelAlunosMatriculados" mnemonicParsing="false" onAction="#onMenuRelAlunosMatriculados" text="Alunos Matriculados" />
+                        <MenuItem fx:id="idRelAlunosEspera" mnemonicParsing="false" onAction="#onMenuRelAlunosEmEspera" text="Alunos na Fila de Espera" />
+                        <MenuItem fx:id="idRelAlunosDesligados" mnemonicParsing="false" onAction="#onMenuRelDesligados" text="Alunos Desligados" />
+                        <MenuItem fx:id="idRelTurmas" mnemonicParsing="false" onAction="#onMenuRelTurmas" text="Relatorio Turmas" />
+                        <MenuItem fx:id="idRelPMU" mnemonicParsing="false" onAction="#onMenuRelPMU" text="Relatorio PMU" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ajuda">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Sobre" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <bottom>
+            <ToolBar BorderPane.alignment="CENTER">
+              <items>
+                  <Button fx:id="idButtonSair" mnemonicParsing="false" onAction="#onButtonSair" text="Sair" />
+                <Button fx:id="idButtonVoltar" mnemonicParsing="false" onAction="#onButtonVoltar" text="Voltar" />
+              </items>
+            </ToolBar>
+         </bottom>
+      </BorderPane>
+   </content>
+</ScrollPane>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioTTTTT.jjrxml" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5fb156e7-475d-41f0-8e78-dada64f419fc">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AdapterJasper"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM aluno]]>
+	</queryString>
+	<field name="NomeAluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NomeAluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="NomeAluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="CpfAluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CpfAluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="CpfAluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="DataNascimentoAluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DataNascimentoAluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="DataNascimentoAluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="TurmaRegular" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TurmaRegular"/>
+		<property name="com.jaspersoft.studio.field.label" value="TurmaRegular"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="TurmaEspecial" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TurmaEspecial"/>
+		<property name="com.jaspersoft.studio.field.label" value="TurmaEspecial"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="0" width="450" height="40" uuid="dac42e62-f5fb-4d15-8a9a-0c33f043848f"/>
+				<textElement textAlignment="Center">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[ ALUNOS POR TURMA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="0" width="70" height="30" uuid="43ee3788-1f05-4ce9-a15d-59704680d83f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="100" height="30" uuid="02502346-45b7-43f5-8971-4c589d972dd9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Data de Nasc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="0" width="94" height="30" uuid="95d45485-2122-4101-8c8f-1db2bb445c7b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Turma Especial:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="0" width="94" height="30" uuid="5a22561b-e79f-467b-922d-d6264f398587">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Turma Regular]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="230" height="15" uuid="62f979dd-2649-460a-a893-efe7199bcaf9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NomeAluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="100" height="15" uuid="f14ff594-d3b1-4dde-946b-6bdfb797821b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DataNascimentoAluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="0" width="94" height="15" uuid="7f91863c-9d2a-40e1-8921-9dcca791fc64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TurmaEspecial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="0" width="94" height="15" uuid="4e41289e-2bec-44cf-a925-af767ee93020"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TurmaRegular}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

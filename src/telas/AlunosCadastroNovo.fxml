@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="idBorderPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telas.AlunosCadastroNovoController">
+   <center>
+      <TabPane prefHeight="565.0" prefWidth="880.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Dados Pessoais">
+               <content>
+                  <VBox>
+                     <children>
+                        <Label text="1.0 -  DADOS DO ATENDIDO E RESPONSÁVEIS">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="849.0" minWidth="10.0" prefWidth="522.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="6.0" prefWidth="184.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Nome do Aluno:">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Data Cadastro" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="2.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idNomeAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="284.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <DatePicker fx:id="idDataCadastro" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="40.0" right="10.0" />
+                                 </GridPane.margin>
+                              </DatePicker>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="536.0" minWidth="0.0" prefWidth="117.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="689.0" minWidth="0.0" prefWidth="138.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="780.0" minWidth="10.0" prefWidth="136.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="780.0" minWidth="10.0" prefWidth="61.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="RG:" textAlignment="CENTER">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="CPF:" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idRgAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCpfAluno" maxHeight="25.0" minHeight="25.0" onAction="#onCpfFormat" prefHeight="25.0" promptText="xxx.xxx.xxx-xx" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Data de Nascimento:" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Genero:" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <ComboBox fx:id="idSexoAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" promptText="Masculino" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <DatePicker fx:id="idDataNascimentoAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </DatePicker>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane maxHeight="50.0" minHeight="50.0" prefHeight="50.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="704.0" minWidth="10.0" prefWidth="187.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="63.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="238.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="168.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="17.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Rua:">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" prefWidth="171.0" text="Número:" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Bairro" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="CEP:" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idRuaAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="393.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="IdNumeroRuaAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idBairroAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="190.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCepAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="164.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="704.0" minWidth="10.0" prefWidth="135.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="135.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="179.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Celular:">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" prefWidth="171.0" text="Tel. Fixo:" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Email:" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idCelularAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="393.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idTelFixoAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idEmailAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="704.0" minWidth="10.0" prefWidth="283.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="102.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="80.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Escola">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Período" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Série Escolar" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idEscolaAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <ComboBox fx:id="idPeriodoAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="idAnoEscolarAluno" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <opaqueInsets>
+                                    <Insets right="10.0" />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane prefHeight="60.0" prefWidth="517.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="704.0" minWidth="10.0" prefWidth="274.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="90.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="88.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="72.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Nome Mãe:">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="RG:" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="CPF:" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Celular:" GridPane.columnIndex="3" />
+                              <TextField fx:id="IdNomeMae" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idRgMae" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCpfMae" maxHeight="25.0" minHeight="25.0" onAction="#onCpfFormat" prefHeight="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCelularMae" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="704.0" minWidth="10.0" prefWidth="283.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="102.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="80.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Nome Pai:">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="RG:" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Celular:" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="IdNomePai" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idRgPai" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCpfPai" maxHeight="25.0" minHeight="25.0" onAction="#onCpfFormat" prefHeight="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCelularPai" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="CPF:" GridPane.columnIndex="2" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="704.0" minWidth="10.0" prefWidth="283.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="102.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="80.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Nome do Responsável:">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="RG:" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Celular:" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idNomeResponsavel" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idRgResponsavel" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCpfResponsavel" maxHeight="25.0" minHeight="25.0" onAction="#onCpfFormat" prefHeight="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCelularResponsavel" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="CPF:" GridPane.columnIndex="2" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="704.0" minWidth="10.0" prefWidth="333.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="656.0" minWidth="10.0" prefWidth="80.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="IdEnderecoTrabalho" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idNumeroTrabalho" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="idCepTrabalho" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Rua:">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="Número:" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label maxHeight="15.0" minHeight="15.0" prefHeight="15.0" text="CEP:" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+          <Tab text="Dados Adicionais">
+               <content>
+                  <VBox>
+                     <children>
+                        <Label text="2.0 - DADOS DA MORADIA">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane>
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="idMoradiaPropria" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" selected="true" text="Própria" textAlignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets bottom="2.0" left="10.0" top="2.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoMoradia" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idMoradiaAlugada" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" text="Alugada" textAlignment="CENTER" toggleGroup="$GrupoMoradia" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="2.0" left="10.0" top="2.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="idMoradiaFinanciada" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" text="Financiada" textAlignment="CENTER" toggleGroup="$GrupoMoradia" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets bottom="2.0" left="10.0" top="2.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="idMoradiaCedida" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" text="Cedida" textAlignment="CENTER" toggleGroup="$GrupoMoradia" GridPane.columnIndex="3">
+                                 <GridPane.margin>
+                                    <Insets bottom="2.0" left="10.0" top="2.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="198.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="42.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="284.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Quantas pessoas moram na casa:">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="idNumeroPessoasMoradia" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label alignment="CENTER_RIGHT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Qual a Renda Familiar:" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="idRenda" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <Label text="3.0 - INFORMAÇÕES DA SAÚDE DO ATENDIDO">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="131.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="0.0" prefWidth="61.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="3.0" prefWidth="57.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="0.0" prefWidth="49.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="227.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Alguma Alergia:">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <RadioButton fx:id="idAlergiaNao" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" selected="true" text="NÃO" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoAlergia" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idAlergiaSim" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="SIM" toggleGroup="$GrupoAlergia" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </RadioButton>
+                              <Label fx:id="idQualAlergia" text="Qual ?" visible="false" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idAlergiaQual" promptText="Tipo de alergia." visible="false" GridPane.columnIndex="4">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" right="10.0" top="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="131.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="0.0" prefWidth="61.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="3.0" prefWidth="57.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="0.0" prefWidth="49.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="227.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Alguma Deficiência:">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <RadioButton fx:id="idDeficienciaNao" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" selected="true" text="NÃO" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoDeficiencia" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idDeficienciaSim" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="SIM" toggleGroup="$GrupoDeficiencia" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </RadioButton>
+                              <Label fx:id="idQualDeficiencia" text="Qual?" visible="false" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idDeficienciaQual" promptText="Tipo de deficiencia." visible="false" GridPane.columnIndex="4">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" right="10.0" top="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="131.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="0.0" prefWidth="61.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="3.0" prefWidth="57.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="0.0" prefWidth="49.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="227.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Alguma Cirurgia:">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <RadioButton fx:id="idCirurgiaNao" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" selected="true" text="NÃO" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoCirurgia" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idCirurgiaSim" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="SIM" toggleGroup="$GrupoCirurgia" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </RadioButton>
+                              <Label fx:id="idQualCirurgia" text="Qual?" visible="false" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idCirurgiaQual" promptText="Tipo de Cirurgia." visible="false" GridPane.columnIndex="4">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" right="10.0" top="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="131.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="0.0" prefWidth="61.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="3.0" prefWidth="57.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="0.0" prefWidth="49.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="227.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Alguma Doença:">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <RadioButton fx:id="idDoencaNao" mnemonicParsing="false" selected="true" text="NÃO" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoDoenca" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idDoencaSim" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="SIM" toggleGroup="$GrupoDoenca" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </RadioButton>
+                              <Label fx:id="idQualDoenca" text="Qual?" visible="false" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="idDoencaQual" promptText="Tipo de doenca." visible="false" GridPane.columnIndex="4">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" right="10.0" top="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <GridPane maxHeight="25.0" minHeight="25.0" prefHeight="25.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="131.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="0.0" prefWidth="61.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="3.0" prefWidth="57.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="0.0" prefWidth="49.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="227.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Remédio Controlado:">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <RadioButton fx:id="IdRemedioControladoNao" mnemonicParsing="false" selected="true" text="NÃO" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoRemedio" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="IdRemedioControladoSim" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="SIM" toggleGroup="$GrupoRemedio" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </RadioButton>
+                              <Label fx:id="idQualRemedio" text="Qual?" visible="false" GridPane.columnIndex="3">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="IdRemedioControladoQual" promptText="Tipo de remedio." visible="false" GridPane.columnIndex="4">
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" right="10.0" top="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <Label text="4.0 - INFORMAÇÕES SOCIAIS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="270.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="195.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Participa do Bolsa Família:">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <RadioButton fx:id="idBolsaFamiliaSim" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="SIM" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoBolsaFamilia" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idBolsaFamiliaNao" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" selected="true" text="NÃO" toggleGroup="$GrupoBolsaFamilia" GridPane.columnIndex="2" />
+                              <Label maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Recebe algum Benefício do Governo:" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <RadioButton fx:id="idBeneficioSim" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="SIM" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoBeneficio" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idBeneficioNao" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" selected="true" text="NÃO" toggleGroup="$GrupoBeneficio" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Está Inscrita no Cadastro Único" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <RadioButton fx:id="idCadastroUnicoSim" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="SIM" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoCadUnico" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idCadastroUnicoNao" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" selected="true" text="NÃO" toggleGroup="$GrupoCadUnico" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" text="Número de Identificação Social (NIS):" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="idNumeroNIS" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <Label text="5.0 - FORMA DE ENCAMINHAMENTO">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane prefHeight="48.0" prefWidth="659.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="139.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="118.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="81.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="246.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="idEncaminhaVaraInfancia" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Vara da Infância">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="GrupoEncaminha" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="idEncaminhaConselhoTutelar" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Conselho Tutelar" toggleGroup="$GrupoEncaminha" GridPane.columnIndex="1" />
+                              <RadioButton fx:id="idEncaminhaCemaia" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Cemaia" toggleGroup="$GrupoEncaminha" GridPane.columnIndex="2" />
+                              <RadioButton fx:id="idEncaminhaBemSocial" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Bem social" toggleGroup="$GrupoEncaminha" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="idEncaminhaVontadePropria" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" selected="true" text="Vontade proṕria" toggleGroup="$GrupoEncaminha" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="idEncaminhaOutra" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Outra" toggleGroup="$GrupoEncaminha" GridPane.columnIndex="3" />
+                              <TextField fx:id="idEncaminhaOutraTxt" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" top="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <RadioButton fx:id="idEncaminhaCaps" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Caps" toggleGroup="$GrupoEncaminha" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="20.0" right="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+        </tabs>
+         <BorderPane.margin>
+            <Insets left="15.0" right="15.0" />
+         </BorderPane.margin>
+      </TabPane>
+   </center>
+   <bottom>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button fx:id="idButtonSalvar" mnemonicParsing="false" onAction="#onButtonSalvarAction" text="Salvar" />
+            <Button fx:id="idButtonLimpar" mnemonicParsing="false" onAction="#onButtonLimparAction" text="Limpar" />
+        </items>
+      </ToolBar>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportTeste" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ca3f7e10-7470-4da4-a294-75d25e8a7170">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AdapterJasper"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM aluno]]>
+	</queryString>
+	<field name="NomeAluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NomeAluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="NomeAluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="DataCadastro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DataCadastro"/>
+		<property name="com.jaspersoft.studio.field.label" value="DataCadastro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="Situacao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Situacao"/>
+		<property name="com.jaspersoft.studio.field.label" value="Situacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="RgAluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RgAluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="RgAluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="CpfAluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CpfAluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="CpfAluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<field name="DataNascimentoAluno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DataNascimentoAluno"/>
+		<property name="com.jaspersoft.studio.field.label" value="DataNascimentoAluno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="aluno"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="10" width="230" height="30" uuid="442a36e3-adbb-418a-85dd-94092274ce45"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="20"/>
+				</textElement>
+				<text><![CDATA[Alunos na Fila de Espera]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="200" height="20" uuid="c7c2f4ec-8fc8-4c18-b405-e5241349e81a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="0" width="60" height="20" uuid="d41dc027-b75e-4970-b79b-23b634849dd4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RG:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="60" height="20" uuid="f1bc0f31-477a-4de9-8a26-f9c3f8f9d83a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="60" height="20" uuid="85b45064-3b5c-4f75-af13-a3cd547e70dd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de Nasc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="60" height="20" uuid="36a10815-e627-447d-80e5-f9f2f45f6294">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Cad.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="492" y="0" width="68" height="20" uuid="c8bffd89-f45e-44d5-acc0-ad80792fee2d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="200" height="20" uuid="20777185-6ec9-49c4-9c1d-3ca8eab1a428"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NomeAluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="60" height="20" uuid="538ba153-e8e4-40fe-9c2c-52649f35d5a5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RgAluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="60" height="20" uuid="f036d71d-cb4c-4d0f-a430-d1c4f62f79f7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CpfAluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="60" height="20" uuid="ba9d08b1-db28-4fea-9f81-8eefd30cb5b8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DataNascimentoAluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="60" height="20" uuid="65a1bdf7-5984-4fb9-b557-c263381d276a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DataCadastro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="492" y="0" width="68" height="20" uuid="cae1173b-ac2c-4f28-b615-ad2bb231d2fb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Situacao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>
